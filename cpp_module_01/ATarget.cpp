@@ -1,0 +1,5 @@
+#include "ASpell.hpp"
+
+
+
+
