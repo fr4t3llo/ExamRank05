@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dummy.hpp                                          :+:      :+:    :+:   */
+/*   Fwoosh.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skasmi <skasmi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:14:28 by skasmi            #+#    #+#             */
-/*   Updated: 2023/04/17 14:18:50 by skasmi           ###   ########.fr       */
+/*   Created: 2023/04/17 14:25:16 by skasmi            #+#    #+#             */
+/*   Updated: 2023/04/17 14:25:21 by skasmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once 
 
 #include <iostream>
-#include "ATarget.hpp"
-class Dummy : public ATarget
+#include "ASpell.hpp"
+class Fwoosh : public ASpell
 {   
     public:
-    Dummy();
-    ~Dummy();
+    Fwoosh();
+    ~Fwoosh();
 
-    ATarget *clone() const;
+    ASpell *clone() const;
 };

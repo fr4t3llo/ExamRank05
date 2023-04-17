@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skasmi <skasmi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:06:36 by skasmi            #+#    #+#             */
-/*   Updated: 2023/04/17 14:07:03 by skasmi           ###   ########.fr       */
+/*   Created: 2023/04/17 14:21:09 by skasmi            #+#    #+#             */
+/*   Updated: 2023/04/17 14:22:40 by skasmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ASpell.hpp"
+
 ASpell::ASpell(){}
 ASpell::ASpell(std::string const &_name, std::string const &_effects) : name(_name), effects(_effects){}
 ASpell::~ASpell(){}
@@ -30,6 +30,6 @@ std::string const & ASpell::getEffects() const{
     return this->effects;
 
 }
-void ASpell::launch(ATarget const &obj) const {
+void ASpell::launch(ATarget const &obj) const{
     obj.getHitBySpell(*this);
 }

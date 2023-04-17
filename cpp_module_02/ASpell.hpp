@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   ASpell.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skasmi <skasmi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:06:29 by skasmi            #+#    #+#             */
-/*   Updated: 2023/04/17 14:06:31 by skasmi           ###   ########.fr       */
+/*   Created: 2023/04/17 14:22:48 by skasmi            #+#    #+#             */
+/*   Updated: 2023/04/17 14:22:57 by skasmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once 
+
 #include <iostream>
+#include <map>
 
-class Warlock
+class ATarget;
+class ASpell
 {
-    private:
+    protected:  
         std::string name;
-        std::string title;
+        std::string effects;
     public:
-        Warlock();
-        Warlock(std::string const &_name, std::string const &_title);
-        ~Warlock();
+        ASpell();
+        ASpell(std::string const &_name, std::string const &_effects);
+        virtual ~ASpell();
+        ASpell(ASpell const &obj);
+        ASpell &operator=(ASpell const &obj);
+
         std::string const & getName() const;
-        std::string const & getTitle() const;
+        std::string const & getEffects() const;
 
-        void setTitle(std::string const &_title);
+        virtual ASpell *clone() const = 0;
 
-        void introduce() const;
+        void launch(ATarget const &obj) const;
 };
+
+#include "ATarget.hpp"

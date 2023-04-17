@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dummy.hpp                                          :+:      :+:    :+:   */
+/*   Fireball.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skasmi <skasmi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:14:28 by skasmi            #+#    #+#             */
-/*   Updated: 2023/04/17 14:18:50 by skasmi           ###   ########.fr       */
+/*   Created: 2023/04/17 14:24:32 by skasmi            #+#    #+#             */
+/*   Updated: 2023/04/17 14:24:43 by skasmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once 
+#include "Fireball.hpp"
 
-#include <iostream>
-#include "ATarget.hpp"
-class Dummy : public ATarget
-{   
-    public:
-    Dummy();
-    ~Dummy();
-
-    ATarget *clone() const;
-};
+Fireball::Fireball() : ASpell("Fireball" ,  "burnt to a crisp"){}
+Fireball::~Fireball(){}
+ASpell * Fireball::clone() const{
+    return new Fireball(*this);
+}

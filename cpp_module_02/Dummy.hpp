@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skasmi <skasmi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:14:28 by skasmi            #+#    #+#             */
-/*   Updated: 2023/04/17 14:18:50 by skasmi           ###   ########.fr       */
+/*   Created: 2023/04/17 14:24:22 by skasmi            #+#    #+#             */
+/*   Updated: 2023/04/17 14:24:27 by skasmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include "ATarget.hpp"
+
 class Dummy : public ATarget
 {   
     public:
@@ -21,4 +22,5 @@ class Dummy : public ATarget
     ~Dummy();
 
     ATarget *clone() const;
+
 };

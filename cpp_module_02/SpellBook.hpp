@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   SpellBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skasmi <skasmi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:20:52 by skasmi            #+#    #+#             */
-/*   Updated: 2023/04/17 14:20:54 by skasmi           ###   ########.fr       */
+/*   Created: 2023/04/17 14:26:12 by skasmi            #+#    #+#             */
+/*   Updated: 2023/04/17 14:26:13 by skasmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once 
+
 #include <iostream>
 #include <map>
 #include "ASpell.hpp"
-#include "ATarget.hpp"
-class Warlock
+class SpellBook
 {
     private:
-        std::string name;
-        std::string title;
+        SpellBook(SpellBook const &obj);
+        SpellBook & operator=(SpellBook const &obj);
         std::map<std::string , ASpell *> mymap;
     public:
-        Warlock();
-        Warlock(std::string const &_name, std::string const &_title);
-        ~Warlock();
-        std::string const & getName() const;
-        std::string const & getTitle() const;
-
-        void setTitle(std::string const &_title);
-
-        void introduce() const;
-
+        SpellBook();
+        ~SpellBook();
 
         void learnSpell(ASpell *ptr);
-        void forgetSpell(std::string name);
-        void launchSpell(std::string name, ATarget const &obj);
+        void forgetSpell(std::string const &obj);
+        ASpell* createSpell(std::string const &obj);
 };

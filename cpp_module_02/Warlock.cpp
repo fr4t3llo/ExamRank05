@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skasmi <skasmi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:05:55 by skasmi            #+#    #+#             */
-/*   Updated: 2023/04/17 14:06:17 by skasmi           ###   ########.fr       */
+/*   Created: 2023/04/17 14:26:40 by skasmi            #+#    #+#             */
+/*   Updated: 2023/04/17 14:27:13 by skasmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@ Warlock::Warlock(std::string const &_name, std::string const &_title) : name(_na
 }
 Warlock::~Warlock(){
    std::cout << this->name << ": My job here is done!" << std::endl;
+   std::map<std::string , ASpell *>::iterator it = mymap.begin();
+   while (it != mymap.end())
+    {
+        delete it->second;
+        it++;
+    }
+    mymap.clear();
 }
 std::string const & Warlock::getName() const{
     return this->name;
@@ -30,4 +37,20 @@ void Warlock::setTitle(std::string const &_title){
 }
 void Warlock::introduce() const{
     std::cout << this->name << ": I am " << this->name << ", " << this->title << "!" << std::endl;
+}
+
+void Warlock::learnSpell(ASpell *ptr){
+    book.learnSpell(ptr);
+}
+void Warlock::forgetSpell(std::string name){
+    book.forgetSpell(name);
+    
+}
+void Warlock::launchSpell(std::string name, ATarget const &obj){
+    ATarget const *ptr = 0;
+    if (ptr == &obj)
+        return;
+    ASpell *tmp = book.createSpell(name);
+    if (tmp)
+        tmp->launch(obj);
 }

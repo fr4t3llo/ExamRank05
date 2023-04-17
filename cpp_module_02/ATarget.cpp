@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skasmi <skasmi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:07:21 by skasmi            #+#    #+#             */
-/*   Updated: 2023/04/17 14:07:37 by skasmi           ###   ########.fr       */
+/*   Created: 2023/04/17 14:23:02 by skasmi            #+#    #+#             */
+/*   Updated: 2023/04/17 14:23:22 by skasmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ATarget.hpp"
-
 ATarget::ATarget(){}
 ATarget::ATarget(ATarget const &obj){
     *this = obj;

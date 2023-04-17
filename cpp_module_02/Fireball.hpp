@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dummy.hpp                                          :+:      :+:    :+:   */
+/*   Fireball.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skasmi <skasmi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:14:28 by skasmi            #+#    #+#             */
-/*   Updated: 2023/04/17 14:18:50 by skasmi           ###   ########.fr       */
+/*   Created: 2023/04/17 14:24:49 by skasmi            #+#    #+#             */
+/*   Updated: 2023/04/17 14:24:54 by skasmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once 
 
+
 #include <iostream>
-#include "ATarget.hpp"
-class Dummy : public ATarget
+#include "ASpell.hpp"
+class Fireball : public ASpell
 {   
     public:
-    Dummy();
-    ~Dummy();
+    Fireball();
+    ~Fireball();
 
-    ATarget *clone() const;
+    ASpell *clone() const;
 };
